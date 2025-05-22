@@ -231,3 +231,17 @@ textarea, input {
   caret-color: #4a90e2; /* bright blue caret */
 }
 
+#copyBtn {
+  background-color: #1a73e8; /* Strong blue */
+  color: #ffffff;            /* White text */
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#copyBtn:hover {
+  background-color: #1558b0;
+}
