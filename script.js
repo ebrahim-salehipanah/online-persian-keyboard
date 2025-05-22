@@ -50,7 +50,7 @@ const rows = [
     { normal: "ی", shift: "#" },
     { normal: "ب", shift: "$" },
     { normal: "ل", shift: "%" },
-    { normal: "ا", shift: "^" },
+    { normal: "ا", shift: "آ" },
     { normal: "ت", shift: "&" },
     { normal: "ن", shift: "*" },
     { normal: "م", shift: "(" },
@@ -170,7 +170,7 @@ const physicalKeyShiftMap = {
   d: "#",
   f: "$",
   g: "%",
-  h: "^",
+  h: "آ",
   j: "&",
   k: "*",
   l: "(",
@@ -365,7 +365,18 @@ copyBtn.addEventListener("click", () => {
 
 // Apply saved theme on page load
 window.addEventListener("DOMContentLoaded", () => {
-  const savedTheme = localStorage.getItem("theme");
+
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Check saved theme first
+  let savedTheme = localStorage.getItem('theme');
+
+  // If no saved theme, apply system preference
+  if (!savedTheme) {
+    localStorage.setItem('theme', prefersDark ? 'dark' : 'light');
+    savedTheme = prefersDark ? 'dark' : 'light';
+  }
+
   if (savedTheme === "dark") {
     document.body.classList.add("dark");
     themeToggle.checked = true;
@@ -385,6 +396,5 @@ themeToggle.addEventListener("change", () => {
     localStorage.setItem("theme", "light");
   }
 });
-
 
 renderKeyboard();
