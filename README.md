@@ -28,11 +28,3 @@ This is a fully functional Persian virtual keyboard that mimics a real physical 
 
 - Physical keyboard typing is intercepted and mapped to Persian.
 - The layout is modeled closely after standard Persian (Iran) physical keyboards.
-
-## 📦 How to Deploy
-
-To host this online:
-1. Upload the folder to a web server, or
-2. Deploy using GitHub Pages:
-   - Push to a GitHub repo
-   - Go to Settings > Pages > Source: `main` branch > `/root`
